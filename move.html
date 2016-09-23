@@ -72,7 +72,7 @@
 			Drag.call(this,id);
 		}
 
-		extend(ChildDrag.prototype, Drag.prototype);
+		extend(ChildDrag, Drag);
 
 		ChildDrag.prototype.fnMove = function(ev) {
 			var L = ev.clientX - this.disX;
@@ -88,9 +88,10 @@
 		};
 
 	    function extend(obj1,obj2) {
-	    	for(var attr in obj2) {
-	    		obj1[attr] = obj2[attr];
-	    	}
+	    	var F = function() {};
+		    F.prototype = obj2.prototype;
+		    obj1.prototype = new F();
+		    obj1.prototype.constructor = obj1;
 	    }
 	</script>
 </head>

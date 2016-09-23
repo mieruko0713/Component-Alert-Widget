@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承的实现</title>
+	<script>
+		var F = function() {};
+		F.prototype = Aaa.prototype;
+		Bbb.prototype = new F();
+		Bbb.prototype.constructor = Bbb;
+	</script>
+</head>
+<body>
+	<!-- 既想继承属性，又想继承方法 -->
+	<!-- 只想继承属性的赋值方式 -->
+	<!-- 只想继承方法 -->
+</body>
+</html>
