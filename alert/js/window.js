@@ -44,7 +44,6 @@ define(["widget","jquery","jqueryUI"],function(widget,$,$UI){
 					"<div class='window_body'>" + this.cfg.content + "</div>"+"</div>");
 					
 			if(this.cfg.winType!="common") {
-				var that = this;
 				this.boundingBox.prepend("<div class='window_header'>" + this.cfg.title + "</div>");
 				this.boundingBox.append("<div class='window_footer'>"+footerContent+"</div>");
 			}
